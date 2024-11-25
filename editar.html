@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <main>
+        <h1>Editar Producto</h1>
+        <form id="edit-product-form" enctype="multipart/form-data">
+            <label for="product-name">Nombre:</label>
+            <input type="text" id="product-name" name="nombre" required>
+
+            <label for="product-price">Precio:</label>
+            <input type="text" id="product-price" name="precio" placeholder="Ej: 1234,56" required>
+
+            <label for="product-image">Imagen (opcional):</label>
+            <input type="file" id="product-image" name="imagen" accept="image/*">
+
+            <button type="submit">Guardar Cambios</button>
+        </form>
+    </main>
+    <script src="assets/app/editar.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "aluralaamgeek",
+  "version": "1.0.0",
+  "description": "Proyecto final de e-commerce",
+  "main": "index.js",
+  "scripts": {
+    "start": "node assets/app/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecommerce",
+    "node",
+    "javascript"
+  ],
+  "author": "Tu Nombre",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "json": "^11.0.0",
+    "json-server": "^1.0.0-beta.3",
+    "multer": "^1.4.5-lts.1"
+  }
+}

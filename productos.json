@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "nombre": "Stormtrooper",
+    "precio": 60,
+    "imagen": "proyecto alura geek - taza.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Game Boy Classic",
+    "precio": 60,
+    "imagen": "proyecto alura geek - gameboy.png"
+  },
+  {
+    "nombre": "Darth Vader Obi-Wan Kenobi",
+    "precio": 35,
+    "imagen": "proyecto alura geek - muneco darth vader.webp",
+    "id": 1732507477251
+  },
+  {
+    "id": 1732507899226,
+    "nombre": "Star Wars Figura de Acción de Stormtrooper",
+    "precio": 29,
+    "imagen": "1732507899224-709194473-Star-Wars-Epic-Hero-Series-Stormtrooper-4-Action-Figure_aeaa314d-63f9-4c13-87c9-d3fc7078d8a1.681de0b9ebee068f6d463a1a9a9b781b.webp"
+  },
+  {
+    "id": 1732507926010,
+    "nombre": "Star Wars The Black Series Darth Maul Figura de Acción",
+    "precio": 43,
+    "imagen": "1732507926007-198553263-STAR-WARS-BL-MINI-SPRINT_46ecc28f-f67c-4db7-8a91-c3def026bc03.2fecb90acd78c13a8e39526fe5e5e050.webp"
+  },
+  {
+    "id": 1732508165771,
+    "nombre": "LEGO Star Wars Diorama de la Sala Del Trono Del Emperador",
+    "precio": 32.98,
+    "imagen": "1732508165765-641115862-ff7fa081-20fb-45db-97d1-df817183155f.821f9b98242f7d3c0e5eaa36d744657c.webp"
+  }
+]
