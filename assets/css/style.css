@@ -1,3 +1,20 @@
+/* Aplicar Montserrat a los títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Aplicar Merriweather al cuerpo del texto */
+body, p, span, li {
+    font-family: 'Merriweather', serif;
+}
+
+/* Otros estilos */
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
