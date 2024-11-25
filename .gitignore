@@ -1,0 +1,15 @@
+# Ignorar la carpeta node_modules
+node_modules/
+
+# Ignorar archivos de configuración del sistema operativo
+.DS_Store      # (para MacOS)
+Thumbs.db      # (para Windows)
+
+# Ignorar archivos de logs
+*.log
+
+# Ignorar archivos de la carpeta de subida de imágenes
+/uploads/
+
+# Ignorar archivos de entorno
+.env
