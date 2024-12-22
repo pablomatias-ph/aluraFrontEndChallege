@@ -40,7 +40,7 @@ document.getElementById("edit-product-form").addEventListener("submit", async (e
 
         if (response.ok) {
             alert("Producto actualizado con éxito.");
-            window.close();
+            window.location.href = "index.html"; // Redirige a index.html
         } else {
             const error = await response.json();
             alert(`Error: ${error.error}`);

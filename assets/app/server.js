@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, "../../"))); // Sirve archivos está
 // Configuración de Multer para subir imágenes
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, "../uploads")); // Carpeta de imágenes subidas
+        cb(null, path.join(__dirname, "../imagenes")); // Carpeta de imágenes subidas
     },
     filename: (req, file, cb) => {
         cb(null, Date.now() + path.extname(file.originalname)); // Nombre único basado en timestamp
@@ -41,16 +41,23 @@ app.get("/productos", (req, res) => {
 
 // Agregar un nuevo producto
 app.post("/productos", upload.single("imagen"), (req, res) => {
-    const productos = readDB();
-    const nuevoProducto = {
-        id: Date.now(),
-        nombre: req.body.nombre,
-        precio: parseFloat(req.body.precio.replace(",", ".")), // Convierte el precio al formato decimal
-        imagen: req.file ? `uploads/${req.file.filename}` : "assets/imagenes/default.jpg",
-    };
-    productos.push(nuevoProducto);
-    writeDB(productos);
-    res.status(201).json(nuevoProducto);
+    try {
+        const productos = readDB(); // Leer los productos existentes
+        const nuevoProducto = {
+            id: Date.now(), // Generar un ID único
+            nombre: req.body.nombre, // Obtener el nombre del producto
+            precio: parseFloat(req.body.precio.replace(",", ".")), // Convertir el precio a número
+            imagen: req.file ? req.file.filename : "default.jpg", // Guardar solo el nombre del archivo
+        };
+        productos.push(nuevoProducto); // Agregar el nuevo producto al array
+
+        // Escribir los productos actualizados en el archivo JSON
+        writeDB(productos);
+        res.status(201).json(nuevoProducto); // Responder con el nuevo producto
+    } catch (error) {
+        console.error("Error al agregar el producto:", error);
+        res.status(500).json({ error: "Error al agregar el producto" }); // Manejo de errores
+    }
 });
 
 // Eliminar un producto
@@ -63,9 +70,9 @@ app.delete("/productos/:id", (req, res) => {
         return res.status(404).json({ error: "Producto no encontrado" });
     }
 
-    // Eliminar la imagen del servidor si está en `uploads`
+    // Eliminar la imagen del servidor si existe    
     const producto = productos[productoIndex];
-    if (producto.imagen.startsWith("uploads/")) {
+    if (producto.imagen.startsWith("/")) {
         const imagePath = path.join(__dirname, "../", producto.imagen);
         if (fs.existsSync(imagePath)) {
             fs.unlinkSync(imagePath);
@@ -106,13 +113,13 @@ app.put("/productos/:id", upload.single("imagen"), (req, res) => {
 
     if (req.file) {
         // Eliminar la imagen anterior si existe
-        if (producto.imagen.startsWith("uploads/")) {
+        if (producto.imagen.startsWith("/")) {
             const oldImagePath = path.join(__dirname, "../", producto.imagen);
             if (fs.existsSync(oldImagePath)) {
                 fs.unlinkSync(oldImagePath);
             }
         }
-        producto.imagen = `uploads/${req.file.filename}`;
+        producto.imagen = `/${req.file.filename}`;
     }
 
     productos[productoIndex] = producto;

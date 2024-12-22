@@ -8,8 +8,6 @@ Thumbs.db      # (para Windows)
 # Ignorar archivos de logs
 *.log
 
-# Ignorar archivos de la carpeta de subida de imágenes
-/uploads/
 
 # Ignorar archivos de entorno
 .env

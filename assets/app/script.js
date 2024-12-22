@@ -77,5 +77,5 @@ document.getElementById("product-form").addEventListener("submit", async (event)
     }
 });
 
-// Renderizar productos iniciales
-renderProducts();
+// Renderizar productos iniciales al cargar la página
+window.addEventListener("load", renderProducts);

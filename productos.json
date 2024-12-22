@@ -1,15 +1,15 @@
 [
   {
     "id": 1,
-    "nombre": "Stormtrooper",
-    "precio": 60,
-    "imagen": "proyecto alura geek - taza.png"
+    "nombre": "Stormtrooper Mas",
+    "precio": 68,
+    "imagen": "/1734895771732.webp"
   },
   {
     "id": 2,
-    "nombre": "Game Boy Classic",
+    "nombre": "Game Boy Classic 02",
     "precio": 60,
-    "imagen": "proyecto alura geek - gameboy.png"
+    "imagen": "1734895598951.webp"
   },
   {
     "nombre": "Darth Vader Obi-Wan Kenobi",
@@ -34,5 +34,23 @@
     "nombre": "LEGO Star Wars Diorama de la Sala Del Trono Del Emperador",
     "precio": 32.98,
     "imagen": "1732508165765-641115862-ff7fa081-20fb-45db-97d1-df817183155f.821f9b98242f7d3c0e5eaa36d744657c.webp"
+  },
+  {
+    "id": 1734891791040,
+    "nombre": "Baby Yoda",
+    "precio": 12,
+    "imagen": "1734891791031.jpg"
+  },
+  {
+    "id": 1734894725116,
+    "nombre": "Otro Yoda",
+    "precio": 65,
+    "imagen": "1734894725105.jpg"
+  },
+  {
+    "id": 1734895790033,
+    "nombre": "Mini yoda",
+    "precio": 23,
+    "imagen": "1734895790023.webp"
   }
 ]
